@@ -1,0 +1,91 @@
+weapon:
+  name: "<gradient:#990018:#FF2A4D><bold>ARACHNAID AXE</bold></gradient>"
+  custom-model-data: "arachnaid_axe"
+  sharpness-level: 6
+  allow-netherite-repair: true
+  combat-particles: true
+  lore:
+    - "<dark_red>Mythic Artifact</dark_red> <dark_gray>|</dark_gray> <gray>Forged of Venom & Crimson</gray>"
+    - ""
+    - "<red><bold>Abilities:</bold></red>"
+    - "<gray>▸ Crouch + Look Down + Right-Click:</gray> <white>Spider Web Trap</white>"
+    - "<gray>▸ Double Right-Click Wall:</gray> <white>Scaffolding Wall Crawl</white>"
+    - "<dark_gray>  W/S Up-Down | A/D Left-Right | Release = Instant Stop</dark_gray>"
+    - "<dark_gray>  Space/Shift Detach</dark_gray>"
+    - ""
+    - "<dark_gray>Unique 1-Craft | Indestructible Drop | Un-renameable | Locked Enchants</dark_gray>"
+
+resource-pack:
+  enabled: true
+  use-built-in-host: true
+  # Leave blank to auto-detect public IPv4 (never uses internal Docker IP)
+  public-host: ""
+  port: 25580
+  # IMPORTANT for shared/free hosts that block port 25580:
+  # Upload plugins/ArachnaidAxe/ArachnaidAxe-ResourcePack.zip to https://mc-packs.net and paste the direct URL here
+  custom-url: ""
+  required: false
+  prompt: "<dark_red><bold>Arachnaid Axe</bold></dark_red> <gray>Mythic 32x32 Weapon Texture</gray>"
+
+crafting:
+  enabled: true
+  broadcast-on-unlock: true
+  broadcast-on-craft: true
+  broadcast-on-wielder-change: true
+  # Slot 1: Enchanted Golden Apple | Slot 2: Emerald Ore         | Slot 3: Enchanted Golden Apple
+  # Slot 4: Fermented Spider Eye   | Slot 5: Diamond Axe         | Slot 6: Fermented Spider Eye
+  # Slot 7: Enchanted Golden Apple | Slot 8: Emerald Ore         | Slot 9: Enchanted Golden Apple
+  shape:
+    - "GEG"
+    - "FAF"
+    - "GEG"
+  ingredients:
+    G: ENCHANTED_GOLDEN_APPLE
+    E: EMERALD_ORE
+    F: FERMENTED_SPIDER_EYE
+    A: DIAMOND_AXE
+
+spider-web:
+  cooldown-seconds: 120
+  range-half-width: 4.0
+  range-vertical: 4.0
+  min-look-down-pitch: 45.0
+  max-ground-search-depth: 5
+  consume-cooldown-on-miss: false
+  target-creative: false
+  # Set to true temporarily if you want to solo-test Spider Web on mobs like zombies
+  target-mobs: false
+
+wall-climb:
+  double-click-window-ms: 420
+  max-wall-aim-distance: 3.2
+  wall-attach-distance: 0.95
+  # Scaffolding-like controlled speeds (blocks/tick velocity impulse under 0.6 fly damping)
+  climb-up-speed: 0.25
+  climb-down-speed: 0.24
+  strafe-speed: 0.22
+  wall-hug-force: 0.08
+  jump-off-push: 0.36
+  jump-off-upward: 0.38
+  cancel-grace-ms: 180
+
+special-webs:
+  drop-items-on-break: false
+  creative-admin-can-break: true
+
+messages:
+  prefix: "<dark_red>[Arachnaid]</dark_red> "
+  no-permission: "<red>You don't have permission to do that.</red>"
+  web-on-cooldown: "<red>Spider Web is on cooldown: <white>{time}s</white> remaining.</red>"
+  web-no-targets: "<gray>No eligible players on solid ground in 8x8 range.</gray>"
+  web-activated: "<green>Spider Web triggered on <white>{count}</white> target(s)!</green>"
+  web-protected: "<red>Special webs can only be broken with Shears or Water!</red>"
+  climb-start: "<green>Wall Crawl ON</green> <dark_gray>|</dark_gray> <white>W/S</white> <gray>Up/Down</gray> <dark_gray>|</dark_gray> <white>A/D</white> <gray>Left/Right</gray> <dark_gray>|</dark_gray> <yellow>Space/Shift</yellow> <gray>Detach</gray>"
+  climb-stop: "<gray>Wall Crawl ended.</gray>"
+  climb-cancelled: "<yellow>Detached from wall.</yellow>"
+  enchant-blocked: "<red>The ARACHNAID AXE cannot be enchanted or disenchanted.</red>"
+  rename-blocked: "<red>Mythic items cannot be renamed!</red>"
+  craft-locked: "<red>The ARACHNAID AXE has already been crafted! Nobody else can craft it.</red>"
+  craft-unlocked-broadcast: "<yellow>The <dark_red><bold>ARACHNAID AXE</bold></dark_red> <yellow>was lost ({reason})! Its crafting recipe is unlocked again.</yellow>"
+  craft-claimed-broadcast: "<green><white>{player}</white> has forged the <dark_red><bold>ARACHNAID AXE</bold></dark_red><green>! Nobody else can craft it now.</green>"
+  wielder-changed-broadcast: "<gold>Now the <dark_red><bold>ARACHNAID AXE</bold></dark_red> <gold>is wielded by <white>{player}</white>!</gold>"

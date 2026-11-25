@@ -1,0 +1,51 @@
+name: ArachnaidAxe
+version: 1.2.0
+main: com.arachnaid.ArachnaidPlugin
+api-version: '1.21.11'
+description: Flagship Mythic Arachnaid Axe (Sharpness VI) with scaffolding-smooth WASD wall crawl, Spider Web trap, anti-rename lock, 1-craft limit, wielder announcements, and 1.21.11 Resource Pack.
+
+commands:
+  arachnaid:
+    description: Admin commands for Arachnaid Axe
+    aliases: [aaxe, arach]
+    usage: /arachnaid <give|reload|pack|cooldown|reset|unlock|status> [player]
+    permission: arachnaid.admin
+
+permissions:
+  arachnaid.admin:
+    description: Grants access to all Arachnaid Axe admin commands
+    default: op
+    children:
+      arachnaid.admin.give: true
+      arachnaid.admin.reload: true
+      arachnaid.admin.pack: true
+      arachnaid.admin.cooldown: true
+      arachnaid.admin.reset: true
+      arachnaid.admin.unlock: true
+      arachnaid.admin.status: true
+  arachnaid.admin.give:
+    default: op
+  arachnaid.admin.reload:
+    default: op
+  arachnaid.admin.pack:
+    default: op
+  arachnaid.admin.cooldown:
+    default: op
+  arachnaid.admin.reset:
+    default: op
+  arachnaid.admin.unlock:
+    default: op
+  arachnaid.admin.status:
+    default: op
+  arachnaid.use.web:
+    description: Allows using the Spider Web ability
+    default: true
+  arachnaid.use.climb:
+    description: Allows using the Wall Crawl ability
+    default: true
+  arachnaid.cooldown.bypass:
+    description: Bypasses Spider Web ability cooldown
+    default: false
+  arachnaid.exempt:
+    description: Exempts player from being targeted by Spider Web ability
+    default: false
